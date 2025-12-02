@@ -6,6 +6,28 @@ Transform unstructured text into structured knowledge using state-of-the-art NLP
 
 ![Architecture](ARCHITECTURE.md)
 
+```mermaid
+graph TD
+    User[User / Streamlit UI] -->|Input Text/PDF/URL| Pipeline[AbstractiveKG Pipeline]
+    User -->|Chat Query| GraphRAG[GraphRAG Engine]
+    
+    subgraph "Core Pipeline"
+        Pipeline -->|Raw Text| Summarizer[Summarizer Module<br/>(BART/T5)]
+        Summarizer -->|Summary| NER_RE[NER & Relation Extraction<br/>(spaCy)]
+        NER_RE -->|Entities & Relations| GraphDB_Connector[Graph DB Connector]
+    end
+    
+    subgraph "Storage"
+        GraphDB_Connector -->|Write| Neo4j[(Neo4j Database)]
+        GraphRAG -->|Read| Neo4j
+    end
+    
+    subgraph "External Models"
+        Summarizer -.->|Load| HuggingFace[Hugging Face Hub]
+        NER_RE -.->|Load| SpaCy_Model[spaCy Model]
+    end
+```
+
 ## Features
 
 ### 🌟 New in v2.0
