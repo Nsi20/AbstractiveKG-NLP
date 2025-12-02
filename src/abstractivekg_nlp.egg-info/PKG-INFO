@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: abstractivekg-nlp
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: transformers
+Requires-Dist: torch
+Requires-Dist: spacy
+Requires-Dist: neo4j
+Requires-Dist: networkx
+Requires-Dist: datasets
+Requires-Dist: evaluate
+Requires-Dist: rouge_score
+Requires-Dist: accelerate
+Requires-Dist: python-dotenv
+
+# AbstractiveKG-NLP
+LLM Fine-Tuning &amp; Knowledge Graph Builder. Transforms unstructured text via BART/T5 Abstractive Summarization and constructs a navigable Neo4j Knowledge Graph using NER and Relation Extraction.

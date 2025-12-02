@@ -1,0 +1,10 @@
+transformers
+torch
+spacy
+neo4j
+networkx
+datasets
+evaluate
+rouge_score
+accelerate
+python-dotenv
