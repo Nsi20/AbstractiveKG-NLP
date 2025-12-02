@@ -107,7 +107,7 @@ If you use this project, please cite:
 ```bibtex
 @software{abstractivekg_nlp,
   title={AbstractiveKG-NLP: LLM Fine-Tuning \& Knowledge Graph Builder},
-  author={Your Name},
+  author={Nsidibe Daniel},
   year={2025}
 }
 ```
